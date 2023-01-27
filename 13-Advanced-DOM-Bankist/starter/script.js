@@ -122,7 +122,7 @@ const SectionObserver = new IntersectionObserver(revealSeaction, {
 
 allSections.forEach(section => {
   SectionObserver.observe(section);
-  section.classList.add('section--hidden');
+  //section.classList.add('section--hidden');
 });
 
 // Lazy loading images
@@ -145,3 +145,32 @@ const imagesObserver = new IntersectionObserver(revealOriginalImage, {
 
 const imgTargets = document.querySelectorAll('img[data-src]');
 imgTargets.forEach(imgTarget => imagesObserver.observe(imgTarget));
+
+// Slider
+
+const slides = document.querySelectorAll('.slide');
+const maxSlides = slides.length - 1;
+const btnRight = document.querySelector('.slider__btn--right');
+const btnLeft = document.querySelector('.slider__btn--left');
+let currentSlide = 0;
+
+const goToSlide = slide => {
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (i - slide)}%)`;
+  });
+};
+goToSlide(0);
+
+const nextSlide = () => {
+  if (currentSlide === maxSlides) currentSlide = 0;
+  else currentSlide++;
+  goToSlide(currentSlide);
+};
+const prevSlide = () => {
+  if (currentSlide === 0) currentSlide = maxSlides;
+  else currentSlide--;
+  goToSlide(currentSlide);
+};
+
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
