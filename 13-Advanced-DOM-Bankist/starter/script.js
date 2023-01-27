@@ -93,13 +93,6 @@ navbar.addEventListener('mouseover', handleHover.bind(0.5));
 navbar.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky Navigation
-
-// const initialcoords = section1.getBoundingClientRect();
-// window.addEventListener('scroll', function () {
-//   if (window.scrollY >= initialcoords.top) navbar.classList.add('sticky');
-//   else navbar.classList.remove('sticky');
-// });
-
 const stickyNav = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) navbar.classList.add('sticky');
@@ -111,5 +104,23 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   threshold: 0,
   rootMargin: `-${navHeight}px`,
 });
-
 headerObserver.observe(header);
+
+// Reveal Sections
+const allSections = document.querySelectorAll('.section');
+const revealSeaction = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  if (entry.isIntersecting) entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const SectionObserver = new IntersectionObserver(revealSeaction, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(section => {
+  SectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
