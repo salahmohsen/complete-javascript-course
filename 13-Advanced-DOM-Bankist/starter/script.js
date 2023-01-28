@@ -154,7 +154,6 @@ imgTargets.forEach(imgTarget => imagesObserver.observe(imgTarget));
 // Slider
 const slider = (function () {
   // Value initialization
-
   let currentSlide = 0;
   const init = () => {
     createDots();
@@ -162,6 +161,7 @@ const slider = (function () {
     goToSlide(0);
   };
 
+  // TranslateX Slides
   const goToSlide = slide => {
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * (i - slide)}%)`;
@@ -222,3 +222,15 @@ const slider = (function () {
 
   init();
 })();
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});
