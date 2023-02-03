@@ -178,16 +178,48 @@
 // 222. Another Class Example //
 ///////////////////////////////////////////////////////
 
+// Public interface
+// class Account {
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.pin = pin;
+//     this.movements = [];
+//     this.locale = navigator.language;
+//   }
+//   deposit(value) {
+//     this.movements.push(value);
+//   }
+//   withdraw(value) {
+//     this.deposit(-value);
+//   }
+
+// }
+
+// const acc1 = new Account('salah', 'EGP', 1111);
+// acc1.deposit(250);
+// acc1.withdraw(140);
+// console.log(acc1);
+
+///////////////////////////////////////////////////////
+// 223. Encapsulation: Protected Properties and Methods //
+///////////////////////////////////////////////////////
+
+// Public interface
 class Account {
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this.pin = pin;
-    this.movements = [];
+    // protected Property
+    this._pin = pin;
+    this._movements = [];
     this.locale = navigator.language;
   }
+  getMovements() {
+    return this._movements;
+  }
   deposit(value) {
-    this.movements.push(value);
+    this._movements.push(value);
   }
   withdraw(value) {
     this.deposit(-value);
@@ -197,4 +229,4 @@ class Account {
 const acc1 = new Account('salah', 'EGP', 1111);
 acc1.deposit(250);
 acc1.withdraw(140);
-console.log(acc1);
+console.log(acc1.getMovements());
