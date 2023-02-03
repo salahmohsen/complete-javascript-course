@@ -206,27 +206,65 @@
 ///////////////////////////////////////////////////////
 
 // Public interface
+// class Account {
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     // protected Property
+//     this._pin = pin;
+//     this._movements = [];
+//     this.locale = navigator.language;
+//   }
+//   getMovements() {
+//     return this._movements;
+//   }
+//   deposit(value) {
+//     this._movements.push(value);
+//   }
+//   withdraw(value) {
+//     this.deposit(-value);
+//   }
+// }
+
+// const acc1 = new Account('salah', 'EGP', 1111);
+// acc1.deposit(250);
+// acc1.withdraw(140);
+// console.log(acc1.getMovements());
+
+///////////////////////////////////////////////////////
+// 224. Encapsulation: Private Class Fields and Methods //
+///////////////////////////////////////////////////////
+
+// Public interface
 class Account {
+  // 1) Public fields (instances)
+  locale = navigator.language;
+  // 2) Private fields
+  #movements = [];
+  #pin;
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    // protected Property
-    this._pin = pin;
-    this._movements = [];
-    this.locale = navigator.language;
+    this.#pin = pin; //Protected Proberty
   }
+  // 3) Public methods
   getMovements() {
-    return this._movements;
+    return this.#movements;
   }
   deposit(value) {
-    this._movements.push(value);
+    this.#movements.push(value);
   }
   withdraw(value) {
     this.deposit(-value);
+  }
+  // 4) Private Methods
+  #approveLoad(val) {
+    return true;
   }
 }
 
 const acc1 = new Account('salah', 'EGP', 1111);
 acc1.deposit(250);
 acc1.withdraw(140);
-console.log(acc1.getMovements());
+console.log(acc1);
+//console.log(acc1.#approveLoad());
