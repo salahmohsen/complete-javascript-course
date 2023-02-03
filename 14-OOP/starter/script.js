@@ -157,19 +157,44 @@
 // 221. Inheritance Between "Classes": Object.create //
 ///////////////////////////////////////////////////////
 
-const Person = {
-  calcAge() {
-    const date = new Date().getFullYear();
-    console.log(date - this.birthYear);
-  },
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
-};
+// const Person = {
+//   calcAge() {
+//     const date = new Date().getFullYear();
+//     console.log(date - this.birthYear);
+//   },
+//   init(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
 
-const Student = Object.create(Person);
+// const Student = Object.create(Person);
 
-const salah = Object.create(Student);
+// const salah = Object.create(Student);
 
-salah.init(salah, 1995);
+// salah.init(salah, 1995);
+
+///////////////////////////////////////////////////////
+// 222. Another Class Example //
+///////////////////////////////////////////////////////
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
+  }
+  deposit(value) {
+    this.movements.push(value);
+  }
+  withdraw(value) {
+    this.deposit(-value);
+  }
+}
+
+const acc1 = new Account('salah', 'EGP', 1111);
+acc1.deposit(250);
+acc1.withdraw(140);
+console.log(acc1);
