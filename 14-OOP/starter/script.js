@@ -125,30 +125,51 @@
 // 220. Inheritance Between "Classes": ES6 Classes ////
 ///////////////////////////////////////////////////////
 
-class Person {
-  constructor(firstName, birthYear) {
+// class Person {
+//   constructor(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   }
+//   calcAge() {
+//     const date = new Date();
+//     return date.getFullYear() - this.birthYear;
+//   }
+//   introduce() {
+//     console.log(
+//       `My name is ${this.firstName}, i'm ${this.calcAge()} and i'm studying ${
+//         this.course
+//       }`
+//     );
+//   }
+// }
+
+// class Student extends Person {
+//   constructor(firstName, birthYear, course) {
+//     super(firstName, birthYear);
+//     this.course = course;
+//   }
+// }
+
+// const salah = new Student('salah', 1995, 'computer science');
+// salah.introduce();
+
+///////////////////////////////////////////////////////
+// 221. Inheritance Between "Classes": Object.create //
+///////////////////////////////////////////////////////
+
+const Person = {
+  calcAge() {
+    const date = new Date().getFullYear();
+    console.log(date - this.birthYear);
+  },
+  init(firstName, birthYear) {
     this.firstName = firstName;
     this.birthYear = birthYear;
-  }
-  calcAge() {
-    const date = new Date();
-    return date.getFullYear() - this.birthYear;
-  }
-  introduce() {
-    console.log(
-      `My name is ${this.firstName}, i'm ${this.calcAge()} and i'm studying ${
-        this.course
-      }`
-    );
-  }
-}
+  },
+};
 
-class Student extends Person {
-  constructor(firstName, birthYear, course) {
-    super(firstName, birthYear);
-    this.course = course;
-  }
-}
+const Student = Object.create(Person);
 
-const salah = new Student('salah', 1995, 'computer science');
-salah.introduce();
+const salah = Object.create(Student);
+
+salah.init(salah, 1995);
