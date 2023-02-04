@@ -236,6 +236,44 @@
 ///////////////////////////////////////////////////////
 
 // Public interface
+// class Account {
+//   // 1) Public fields (instances)
+//   locale = navigator.language;
+//   // 2) Private fields
+//   #movements = [];
+//   #pin;
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.#pin = pin; //Protected Proberty
+//   }
+//   // 3) Public methods
+//   getMovements() {
+//     return this.#movements;
+//   }
+//   deposit(value) {
+//     this.#movements.push(value);
+//   }
+//   withdraw(value) {
+//     this.deposit(-value);
+//   }
+//   // 4) Private Methods
+//   #approveLoad(val) {
+//     return true;
+//   }
+// }
+
+// const acc1 = new Account('salah', 'EGP', 1111);
+// acc1.deposit(250);
+// acc1.withdraw(140);
+// console.log(acc1);
+//console.log(acc1.#approveLoad());
+
+///////////////////////////////////////////////////////
+// 225. Chaining Methods //
+///////////////////////////////////////////////////////
+
+// Public interface
 class Account {
   // 1) Public fields (instances)
   locale = navigator.language;
@@ -253,9 +291,11 @@ class Account {
   }
   deposit(value) {
     this.#movements.push(value);
+    return this;
   }
   withdraw(value) {
     this.deposit(-value);
+    return this;
   }
   // 4) Private Methods
   #approveLoad(val) {
@@ -266,5 +306,5 @@ class Account {
 const acc1 = new Account('salah', 'EGP', 1111);
 acc1.deposit(250);
 acc1.withdraw(140);
-console.log(acc1);
-//console.log(acc1.#approveLoad());
+acc1.deposit(250).withdraw(100).deposit(3000);
+console.log(acc1.getMovements());
