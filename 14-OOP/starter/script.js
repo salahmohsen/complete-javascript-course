@@ -273,38 +273,123 @@
 // 225. Chaining Methods //
 ///////////////////////////////////////////////////////
 
-// Public interface
-class Account {
-  // 1) Public fields (instances)
-  locale = navigator.language;
-  // 2) Private fields
-  #movements = [];
-  #pin;
-  constructor(owner, currency, pin) {
-    this.owner = owner;
-    this.currency = currency;
-    this.#pin = pin; //Protected Proberty
+// // Public interface
+// class Account {
+//   // 1) Public fields (instances)
+//   locale = navigator.language;
+//   // 2) Private fields
+//   #movements = [];
+//   #pin;
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.#pin = pin; //Protected Proberty
+//   }
+//   // 3) Public methods
+//   getMovements() {
+//     return this.#movements;
+//   }
+//   deposit(value) {
+//     this.#movements.push(value);
+//     return this;
+//   }
+//   withdraw(value) {
+//     this.deposit(-value);
+//     return this;
+//   }
+//   // 4) Private Methods
+//   #approveLoad(val) {
+//     return true;
+//   }
+// }
+
+// const acc1 = new Account('salah', 'EGP', 1111);
+// acc1.deposit(250);
+// acc1.withdraw(140);
+// acc1.deposit(250).withdraw(100).deposit(3000);
+// console.log(acc1.getMovements());
+
+///////////////////////////////////////////////////////
+// 226. ES6 Classes Summary //
+///////////////////////////////////////////////////////
+
+// class Student extends Person {
+//   university = 'University of Lisbon';
+//   #studyHours = 0;
+//   course;
+//   static numSubjects = 10;
+
+//   constructor(fullName, birthYear, startYear, course) {
+//     super(fullName, birthYear);
+//     this.startYear = startYear;
+//     this.#course = course;
+//   }
+//   introduce() {
+//     console.log(`I study ${this.#course} at ${this.university}`);
+//   }
+//   study(h) {
+//     this.#makeCoffee();
+//     this.#studyHours += h;
+//   }
+//   #makeCoffee() {
+//     return 'Here is a coffee for you';
+//   }
+//   get testScore() {
+//     return this._testScore;
+//   }
+//   set testScore(score) {
+//     this._testScore = score > 20 ? score : 0;
+//   }
+//   static printCurriculum() {
+//     console.log(`There are ${this.numSubjects} subjects`);
+//   }
+// }
+
+// const student = new Student('Jonas', 2020, 2037, 'Medicine');
+
+///////////////////////////////////////////////////////
+// 227. Coding Challenge #4 //
+///////////////////////////////////////////////////////
+
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
   }
-  // 3) Public methods
-  getMovements() {
-    return this.#movements;
-  }
-  deposit(value) {
-    this.#movements.push(value);
+  accelerate() {
+    this.speed += 10;
+    console.log(this.make, 'Speed After Acceleration', this.speed, 'Km/h');
     return this;
   }
-  withdraw(value) {
-    this.deposit(-value);
+  brake() {
+    this.speed -= 5;
+    console.log(this.make, 'Speed After Brake', this.speed, 'Km/h');
     return this;
-  }
-  // 4) Private Methods
-  #approveLoad(val) {
-    return true;
   }
 }
 
-const acc1 = new Account('salah', 'EGP', 1111);
-acc1.deposit(250);
-acc1.withdraw(140);
-acc1.deposit(250).withdraw(100).deposit(3000);
-console.log(acc1.getMovements());
+class EV extends Car {
+  #charge;
+
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
+  accelerate() {
+    this.speed += 20;
+    this.#charge = (parseFloat(this.#charge) / 100 - 0.01) * 100 + '%';
+    console.log(
+      `${this.make} going at ${this.speed}, with a charge of ${this.#charge}`
+    );
+    return this;
+  }
+}
+
+const rivian = new EV('Rivian', 120, '23%');
+
+rivian.chargeBattery(100).accelerate().accelerate().brake();
+console.log(rivian);
