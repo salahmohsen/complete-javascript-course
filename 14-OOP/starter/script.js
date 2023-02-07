@@ -351,45 +351,44 @@
 // 227. Coding Challenge #4 //
 ///////////////////////////////////////////////////////
 
-class Car {
-  constructor(make, speed) {
-    this.make = make;
-    this.speed = speed;
-  }
-  accelerate() {
-    this.speed += 10;
-    console.log(this.make, 'Speed After Acceleration', this.speed, 'Km/h');
-    return this;
-  }
-  brake() {
-    this.speed -= 5;
-    console.log(this.make, 'Speed After Brake', this.speed, 'Km/h');
-    return this;
-  }
-}
+// class Car {
+//   constructor(make, speed) {
+//     this.make = make;
+//     this.speed = speed;
+//   }
+//   accelerate() {
+//     this.speed += 10;
+//     console.log(this.make, 'Speed After Acceleration', this.speed, 'Km/h');
+//     return this;
+//   }
+//   brake() {
+//     this.speed -= 5;
+//     console.log(this.make, 'Speed After Brake', this.speed, 'Km/h');
+//     return this;
+//   }
+// }
 
-class EV extends Car {
-  #charge;
+// class EV extends Car {
+//   #charge;
 
-  constructor(make, speed, charge) {
-    super(make, speed);
-    this.#charge = charge;
-  }
-  chargeBattery(chargeTo) {
-    this.#charge = chargeTo;
-    return this;
-  }
-  accelerate() {
-    this.speed += 20;
-    this.#charge = (parseFloat(this.#charge) / 100 - 0.01) * 100 + '%';
-    console.log(
-      `${this.make} going at ${this.speed}, with a charge of ${this.#charge}`
-    );
-    return this;
-  }
-}
+//   constructor(make, speed, charge) {
+//     super(make, speed);
+//     this.#charge = charge;
+//   }
+//   chargeBattery(chargeTo) {
+//     this.#charge = chargeTo;
+//     return this;
+//   }
+//   accelerate() {
+//     this.speed += 20;
+//     this.#charge = (parseFloat(this.#charge) / 100 - 0.01) * 100 + '%';
+//     console.log(
+//       `${this.make} going at ${this.speed}, with a charge of ${this.#charge}`
+//     );
+//     return this;
+//   }
+// }
 
-const rivian = new EV('Rivian', 120, '23%');
-
-rivian.chargeBattery(100).accelerate().accelerate().brake();
-console.log(rivian);
+// const rivian = new EV('Rivian', 120, '23%');
+// rivian.chargeBattery(100).accelerate().accelerate().brake();
+// console.log(rivian);
