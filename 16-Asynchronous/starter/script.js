@@ -25,24 +25,38 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
-const getCountry = function (country) {
-  const request = new XMLHttpRequest();
-  request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
-  request.send();
-  request.addEventListener('load', function () {
-    const [data] = JSON.parse(this.responseText);
-    renderCountry(data);
-    data.borders?.forEach(borderCountry => {
-      const request2 = new XMLHttpRequest();
-      // prettier-ignore
-      request2.open('GET',`https://restcountries.com/v3.1/alpha/${borderCountry}`);
-      request2.send();
-      request2.addEventListener('load', function () {
-        const [data2] = JSON.parse(this.responseText);
-        renderCountry(data2, 'neighbour');
-      });
-    });
-  });
+// const getCountry = function (country) {
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+//   request.send();
+//   request.addEventListener('load', function () {
+//     const [data] = JSON.parse(this.responseText);
+//     renderCountry(data);
+//     data.borders?.forEach(borderCountry => {
+//       const request2 = new XMLHttpRequest();
+//       // prettier-ignore
+//       request2.open('GET',`https://restcountries.com/v3.1/alpha/${borderCountry}`);
+//       request2.send();
+//       request2.addEventListener('load', function () {
+//         const [data2] = JSON.parse(this.responseText);
+//         renderCountry(data2, 'neighbour');
+//       });
+//     });
+//   });
+// };
+
+// getCountry('saudi');
+
+const country = function (country) {
+  const request = fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(response => {
+      renderCountry(response[0]);
+      return response[0].borders[0];
+    })
+    .then(response => fetch(`https://restcountries.com/v3.1/alpha/${response}`))
+    .then(response => response.json())
+    .then(response => renderCountry(response[0]));
 };
 
-getCountry('usa');
+country('egypt');
