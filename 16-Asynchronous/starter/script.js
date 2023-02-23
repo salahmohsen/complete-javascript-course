@@ -16,33 +16,43 @@ const renderCountry = function (data, className = 'main') {
       <h4 class="country__region">${data.region}</h4>
       <p class="country__row"><span>👫</span>${(data.population / 1000000).toFixed(2)}M</p>
       <p class="country__row"><span>🗣️</span>${Object.values(data.languages)}</p>
-      <p class="country__row"><span>💰</span>${
-        Object.values(data.currencies)[0].name
-      }</p>
+      <p class="country__row"><span>💰</span>${Object.values(data.currencies)[0].name}</p>
   </div>
 `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
 };
 
+const getJSON = function (url, errMessage = 'Country not Found!') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errMessage} ${response.status}`);
+    //console.log(response.json());
+    return response.json();
+  });
+};
+
 const country = function (country) {
-  const request = fetch(`https://restcountries.com/v3.1/name/${country}`)
-    .then(response => response.json())
+  getJSON(
+    `https://restcountries.com/v3.1/name/${country}`,
+    'Country not Found!'
+  )
     .then(response => {
       renderCountry(response[0]);
-      if (!response[0].borders) return;
       return response[0];
     })
     .then(response => {
-      response.borders?.forEach(borderCountry => {
-        fetch(`https://restcountries.com/v3.1/alpha/${borderCountry}`).then(
-          response =>
-            response
-              .json()
-              .then(response => renderCountry(response[0], 'neighbour'))
-        );
-      });
-    });
+      if (!response.borders)
+        throw new Error(`This Country doesn't have neighbours!`);
+      return getJSON(
+        `https://restcountries.com/v3.1/alpha/${response.borders[0]}`,
+        `This Country doesn't have neighbours!`
+      );
+    })
+    .then(response => {
+      console.log(response[0]);
+      renderCountry(response[0], 'neighbour');
+    })
+    .catch(err => console.log(`${err} ⛔`));
 };
 
-country('sudan');
+country('egypt');
