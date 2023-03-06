@@ -112,15 +112,15 @@ const createImage = function (imagePath) {
 
 // loadNPause();
 
-const loadAll = async function (imgArr) {
-  try {
-    const imgs = imgArr.map(async i => await createImage(i));
-    console.log(imgs);
-    const imgsEl = await Promise.all(imgs);
-    imgsEl.forEach(i => i.classList.add('parallel'));
-  } catch (error) {
-    console.log(error);
-  }
-};
+// const loadAll = async function (imgArr) {
+//   try {
+//     const imgs = imgArr.map(async i => await createImage(i));
+//     console.log(imgs);
+//     const imgsEl = await Promise.all(imgs);
+//     imgsEl.forEach(i => i.classList.add('parallel'));
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+// loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
