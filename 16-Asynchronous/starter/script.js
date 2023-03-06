@@ -49,10 +49,78 @@ const country = function (country) {
       );
     })
     .then(response => {
-      console.log(response[0]);
+      // console.log(response[0]);
       renderCountry(response[0], 'neighbour');
     })
     .catch(err => console.log(`${err} ⛔`));
 };
 
-country('egypt');
+country('germany');
+
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
+
+// getPosition().then(respone => console.log(respone));
+
+let urlImages = [];
+
+// async function fetchPics() {
+//   const respone = await fetch(
+//     'https://www.rijksmuseum.nl/api/nl/collection?key=sors2p2D&involvedMaker=Rembrandt+van+Rijn'
+//   );
+//   const data = await respone.json();
+//   data.artObjects.forEach(element => {
+//     urlImages.push(element.webImage.url);
+//   });
+//   createImage(urlImages[1]);
+// }
+// fetchPics();
+const imgContainer = document.querySelector('.images');
+
+const wait = function (seconds) {
+  return new Promise(resolve => {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+const createImage = function (imagePath) {
+  return new Promise((resolve, reject) => {
+    const img = document.createElement('img');
+    img.src = imagePath;
+    img.addEventListener('load', () => {
+      imgContainer.append(img);
+      resolve(img);
+    });
+    img.addEventListener('error', () => reject(new Error(`image didn't load`)));
+  });
+};
+
+// const loadNPause = async function () {
+//   try {
+//     let img = await createImage('img/img-1.jpg');
+//     console.log('Image 1 loaded');
+//     await wait(2);
+//     img = await createImage('img/img-2.jpg');
+//     console.log('Image 2 loaded');
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// loadNPause();
+
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async i => await createImage(i));
+    console.log(imgs);
+    const imgsEl = await Promise.all(imgs);
+    imgsEl.forEach(i => i.classList.add('parallel'));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
