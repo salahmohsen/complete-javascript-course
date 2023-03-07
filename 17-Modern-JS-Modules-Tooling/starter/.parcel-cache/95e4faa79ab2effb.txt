@@ -1,4 +1,4 @@
-4907
+4909
 133C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\is-glob\README.md133226018803008697 0
 139C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\weak-lru-cache\index.js133226018797868243 0
 139C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\to-regex-range\index.js133226018796633215 0
@@ -15,7 +15,7 @@
 141C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\_baseIsMatch.js133226016977901726 0
 147C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\source-map\lib\binary-search.js133226018798676375 0
 125C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@mischnic133226018784236516 1
-115C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\package.json133226044477994643 0
+115C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\package.json133226050265479357 0
 156C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\utils\src\dependency-location.js133226018856572897 0
 120C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\package-lock.json133226019126813239 0
 132C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\terser\README.md133226018819758898 0
@@ -33,11 +33,11 @@
 150C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\core\lib\PackagerRunner.js133226018868710049 0
 137C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\valuesIn.js133226016990693611 0
 165C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest2.c133226018817507562 0
-107C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist133226035299865048 1
+107C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist133226050410830152 1
 160C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\node-gyp-build-optional-packages\optional.js133226018799208711 0
 136C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\weak-lru-cache\tests133226018799534837 1
 133C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\svgo\package.json133226018816829297 0
-113C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\index.html133226028450132530 0
+113C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\index.html133226047420597807 0
 142C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\_getMatchData.js133226016980934124 0
 124C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\get-port133226018844612394 1
 152C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\htmlparser2\lib\FeedHandler.d.ts.map133226018799896426 0
@@ -57,7 +57,7 @@
 147C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\regions\UZ.js133226018844222504 0
 141C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\_equalArrays.js133226016980634976 0
 156C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\utility-types\dist\aliases-and-guards.js133226018802998702 0
-112C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\script.js133226033280723926 0
+112C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\script.js133226626305748898 0
 152C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\css-tree\lib\syntax\config\parser.js133226018816854424 0
 160C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\source-map\dist\wasm-bindings-web.js133226018822480038 0
 137C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\react-refresh\LICENSE133226018803229552 0
@@ -3870,6 +3870,7 @@
 143C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\src\_throw.mjs133226018824421135 0
 160C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\features\object-observe.js133226018837494041 0
 155C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\features\objectrtc.js133226018837534040 0
+129C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist\index.df8f39f0.js.map133226050410810150 0
 158C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\features\offline-apps.js133226018837579299 0
 157C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\core\src\requests\AssetRequest.js133226018863902931 0
 150C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\graph\src\AdjacencyList.js133226018833169049 0
@@ -4905,4 +4906,5 @@
 131C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\.bin\terser.cmd133226019106384456 0
 131C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\node_modules\.bin\terser.ps1133226019106384456 0
 129C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist\index.8cfc62b9.js.map133226035299844942 0
-118C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist\index.html133226035296117728 0
+125C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist\index.df8f39f0.js133226050410640202 0
+118C:\Users\Salah.DESKTOP-KNBN60R\Desktop\complete-javascript-course\17-Modern-JS-Modules-Tooling\starter\dist\index.html133226050410630165 0

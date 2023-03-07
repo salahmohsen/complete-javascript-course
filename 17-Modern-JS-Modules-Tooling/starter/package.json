@@ -8,7 +8,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "core-js": "^3.29.0",
+    "lodash-es": "^4.17.21",
+    "regenerator-runtime": "^0.13.11"
   },
   "devDependencies": {
     "parcel": "^2.8.3"
