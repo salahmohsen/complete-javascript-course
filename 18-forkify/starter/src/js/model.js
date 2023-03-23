@@ -1,5 +1,5 @@
 import { async } from 'regenerator-runtime';
-import { APi_URL } from './config';
+import { APi_URL, RESULT_PER_PAGE } from './config';
 import { getJSON } from './helpers';
 
 export const state = {
@@ -7,6 +7,8 @@ export const state = {
   search: {
     query: '',
     results: [],
+    page: 1,
+    resultsPerPage: RESULT_PER_PAGE,
   },
 };
 
@@ -32,9 +34,9 @@ export const loadRecipe = async function (recipeID) {
 
 export const loadSearchResults = async function (query) {
   try {
-    const data = await getJSON(`${APi_URL}?search=${query}`);
+    const { data } = await getJSON(`${APi_URL}?search=${query}`);
     state.search.query = query;
-    state.search.results = data.data.recipes.map(recipe => {
+    state.search.results = data.recipes.map(recipe => {
       return {
         id: recipe.id,
         title: recipe.title,
@@ -46,4 +48,11 @@ export const loadSearchResults = async function (query) {
     console.log(error);
     throw error;
   }
+};
+
+export const getSearchResultsPage = function (page = state.search.page) {
+  state.search.page = page;
+  const start = (page - 1) * state.search.resultsPerPage;
+  const end = page * state.search.resultsPerPage;
+  return state.search.results.slice(start, end);
 };
