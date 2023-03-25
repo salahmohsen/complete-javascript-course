@@ -16,6 +16,7 @@ const controlRecipes = async function () {
     const recipeID = window.location.hash.slice(1);
     if (!recipeID) return;
     recipeView.renderSpinner();
+    resultsView.update(model.getSearchResultsPage());
     await model.loadRecipe(recipeID);
     recipeView.render(model.state.recipe);
   } catch (error) {
